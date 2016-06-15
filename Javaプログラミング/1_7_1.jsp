@@ -12,7 +12,7 @@
         <title>課題1_7＜入力ページ＞</title>
     </head>
     <body>
-        <form methode="post" action="1_7_1.jsp">
+        <form methode="post" action="1_7.jsp">
             総額：<input type="number" name="sougaku" min="0" ><br>
             個数：<input type="number" name="kosuu" min="1"><br>
             商品種別：<input type="radio" name="shubetsu" value="zakka">雑貨
