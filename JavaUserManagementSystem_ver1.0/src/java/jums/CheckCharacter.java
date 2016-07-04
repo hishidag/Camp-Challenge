@@ -9,22 +9,26 @@ package jums;
  *
  * @author user1
  * 課題４
+ * Formから受け取った文字列をチェックするクラスです
+ * 
+ * 
  */
 public class CheckCharacter {   
-    public boolean isAllCheck = true;
-    
-    public void sanitizeCheck(){
+    //ひとつでもOKではない項目が出てきた場合にfalseに
+    public boolean isAllCheck;
+    //呼び出した際にtrueで初期化
+    public CheckCharacter(){
         isAllCheck = true;
     }
-    
+    //エラーの種類定義
     public enum checkEnum{
         emptyerr,
         tellerr,
         numbererr,
         ok
     }
-    
-    public String errorString(checkEnum checkEnum){
+    //エラー文章定義
+    public final String errorString(checkEnum checkEnum){
         if(checkEnum == checkEnum.emptyerr){
             isAllCheck = false;
             return "フォームが空です";
@@ -39,14 +43,14 @@ public class CheckCharacter {
         }
         return "OK";
     } 
-    
+    //空でなければ可
     public String checkCharacter(String str){
         if("".equals(str) || str == null){
             return errorString(checkEnum.emptyerr);
         }
         return errorString(checkEnum.ok);
     }
-    
+    //数字か"-"のみ可
     public String checkTell(String str){
         if("".equals(str) || str == null){
             return errorString(checkEnum.emptyerr);
@@ -55,7 +59,7 @@ public class CheckCharacter {
         }        
         return errorString(checkEnum.ok);
     }
-    
+    //数字のみ可
     public String checkNumber(String str){
         if("".equals(str) || str == null){
             return errorString(checkEnum.emptyerr);

@@ -21,7 +21,7 @@ public class UserDataBeans implements Serializable {
     String comment  = "";   
     
     public void UserDateBeans(){}
-    
+    //XSSを回避するための文字列変換
     public String escapeSpecialCharaters(String str){
         if(str == null) {return "";}
         str = str.replaceAll("&","&amp");
@@ -52,7 +52,7 @@ public class UserDataBeans implements Serializable {
     
     public String getComment(){ return this.comment;}
     public void setComment(String comment){ this.comment = this.escapeSpecialCharaters(comment);}
-    
+    //まとめて使う用
     public void setAllContents(String name,String year,String month,String day,String type,String tell,String comment){
         this.setName(name);
         this.setYear(year);

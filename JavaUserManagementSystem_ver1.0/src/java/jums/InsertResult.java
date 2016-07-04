@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import jums.UserDataBeans;
-import java.util.Date;
 
 
 /**
@@ -63,7 +61,9 @@ public class InsertResult extends HttpServlet {
             //DBへデータの挿入
             UserDataDAO.getInstance().insert(userdata);
             request.getRequestDispatcher("/insertresult.jsp").forward(request,response);            
-
+        }catch(SQLException e){
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
         }catch(Exception e){
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);
