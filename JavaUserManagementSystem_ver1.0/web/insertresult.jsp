@@ -24,7 +24,9 @@
         自己紹介:<%= udb.getComment()%><br>
         以上の内容で登録しました。<br>
         <br>
+        <%--課題１--%>
         <%=JumsHelper.getInstance().home()%>
     </body>
 </html>
+<%--課題７--%>
 <% hs.invalidate();%>

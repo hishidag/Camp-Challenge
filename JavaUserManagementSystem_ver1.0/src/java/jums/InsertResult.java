@@ -38,6 +38,7 @@ public class InsertResult extends HttpServlet {
             HttpSession session = request.getSession();
             request.setCharacterEncoding("UTF-8");//セッションに格納する文字コードをUTF-8に変更
             String accesschk = request.getParameter("ac1");
+            //課題２
             if(accesschk ==null || (Integer)session.getAttribute("ac1")!=Integer.parseInt(accesschk)){
                     throw new Exception("不正なアクセスです");
             }

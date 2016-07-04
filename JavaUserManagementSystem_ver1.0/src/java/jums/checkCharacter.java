@@ -8,6 +8,7 @@ package jums;
 /**
  *
  * @author user1
+ * 課題４
  */
 public class checkCharacter {   
     public boolean isAllCheck = true;

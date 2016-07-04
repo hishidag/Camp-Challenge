@@ -9,6 +9,7 @@ import jums.checkCharacter.checkEnum;
 /**
  *
  * @author user1
+ * 課題３
  */
 public class UserDataBeans implements Serializable {
     String name     = "";

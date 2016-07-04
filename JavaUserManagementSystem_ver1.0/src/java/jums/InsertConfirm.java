@@ -45,6 +45,7 @@ public class InsertConfirm extends HttpServlet {
             String comment = request.getParameter("comment");
             
             //UserDateBeansに受け渡し
+            //課題５
             UserDataBeans udb = new UserDataBeans();
             udb.setAllContents(name,year,month,day,type,tell,comment);
                         

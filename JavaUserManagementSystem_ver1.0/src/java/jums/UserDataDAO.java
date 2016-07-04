@@ -32,6 +32,7 @@ public class UserDataDAO {
             st =  con.prepareStatement("INSERT INTO user_t(name,birthday,tell,type,comment,newDate) VALUES(?,?,?,?,?,?)");
             st.setString(1, ud.getName());
             Calendar cal = Calendar.getInstance();
+            //課題６
             cal.setTime(ud.getBirthday());
             cal.set(Calendar.MILLISECOND, 0);
             st.setDate(2, new java.sql.Date(cal.getTimeInMillis()));//指定のタイムスタンプ値からSQL格納用のDATE型に変更

@@ -3,6 +3,7 @@
 <%@page import="jums.UserDataBeans"%>
 <%
     HttpSession hs = request.getSession();
+    //課題７
     hs.setMaxInactiveInterval(60 * 30);
     UserDataBeans udb = new UserDataBeans();
     if(hs.getAttribute("FormContents") != null){

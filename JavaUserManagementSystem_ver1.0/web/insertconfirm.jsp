@@ -4,6 +4,7 @@
 <%@page import="jums.checkCharacter"%>
 <%
     HttpSession hs = request.getSession();
+    //課題７
     hs.setMaxInactiveInterval(60 * 3);
     UserDataBeans udb = new UserDataBeans();
     if(hs.getAttribute("FormContents") != null){
@@ -41,6 +42,7 @@
             <input type="submit" name="no" value="登録画面に戻る">
         </form>
     <br>
+    <%--課題１--%>
     <%=JumsHelper.getInstance().home()%>
     </body>
 </html>
