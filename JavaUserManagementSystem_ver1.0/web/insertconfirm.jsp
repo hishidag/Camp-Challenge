@@ -1,7 +1,7 @@
 <%@page import="javax.servlet.http.HttpSession" %>
 <%@page import="jums.JumsHelper"%>
 <%@page import="jums.UserDataBeans"%>
-<%@page import="jums.checkCharacter"%>
+<%@page import="jums.CheckCharacter"%>
 <%
     HttpSession hs = request.getSession();
     //課題７
@@ -10,7 +10,7 @@
     if(hs.getAttribute("FormContents") != null){
         udb = (UserDataBeans)hs.getAttribute("FormContents");
     }
-    checkCharacter cc = new checkCharacter();
+    CheckCharacter cc = new CheckCharacter();
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -5,7 +5,7 @@
  */
 package jums;
 import java.io.Serializable;
-import jums.checkCharacter.checkEnum;
+import jums.CheckCharacter.checkEnum;
 /**
  *
  * @author user1
