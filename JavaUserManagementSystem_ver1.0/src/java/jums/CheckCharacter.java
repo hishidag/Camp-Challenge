@@ -16,7 +16,7 @@ package jums;
 public class CheckCharacter {   
     //ひとつでもOKではない項目が出てきた場合にfalseに
     public boolean isAllCheck;
-    //呼び出した際にtrueで初期化
+ 
     public CheckCharacter(){
         isAllCheck = true;
     }
@@ -31,17 +31,17 @@ public class CheckCharacter {
     public final String errorString(checkEnum checkEnum){
         if(checkEnum == checkEnum.emptyerr){
             isAllCheck = false;
-            return "フォームが空です";
+            return "<font color=\"red\">記入されていません</font>";
         }        
         if(checkEnum == checkEnum.tellerr){
             isAllCheck = false;
-            return "電話番号は数字と\"-\"のみ使用できます";
+            return "<font color=\"red\">電話番号は半角数字と\"-\"のみ使用できます</font>";
         }        
         if(checkEnum == checkEnum.numbererr){
             isAllCheck = false;
-            return "数字のみ使用できます";
+            return "<font color=\"red\">数字のみ使用できます</font>";
         }
-        return "OK";
+        return "<font color=\"blue\">OK</font>";
     } 
     //空でなければ可
     public String checkCharacter(String str){

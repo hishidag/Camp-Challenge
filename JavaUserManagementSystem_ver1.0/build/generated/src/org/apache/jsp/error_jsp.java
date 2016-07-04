@@ -3,11 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import javax.servlet.http.HttpSession;
 import jums.JumsHelper;
-import jums.UserDataBeans;
 
-public final class insertresult_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -46,68 +44,36 @@ public final class insertresult_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-
-    HttpSession hs = request.getSession();
-    UserDataBeans udb = new UserDataBeans();
-    if(hs.getAttribute("FormContents") != null){
-        udb = (UserDataBeans)hs.getAttribute("FormContents");
-    }
-
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JUMS登録結果画面</title>\n");
+      out.write("        <title>error</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <center>\n");
-      out.write("        <h1>登録結果</h1><br>\n");
-      out.write("        <b>以上の内容で登録しました。</b><br>        \n");
-      out.write("        <table>\n");
-      out.write("            <tr>\n");
-      out.write("                <th align=\"right\">名前:</th>\n");
-      out.write("                <td width=\"300px\">");
-      out.print( udb.getName());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr>\n");
-      out.write("                <th align=\"right\">生年月日:</th>\n");
-      out.write("                <td>");
-      out.print(udb.getYear()+"年"+udb.getMonth()+"月"+udb.getDay()+"日");
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr>\n");
-      out.write("                <th align=\"right\">種別:</th>\n");
-      out.write("                <td>");
-      out.print( udb.getType());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr>\n");
-      out.write("                <th align=\"right\">電話番号:</th>\n");
-      out.write("                <td>");
-      out.print( udb.getTell());
-      out.write("</td>\n");
-      out.write("            </tr>        \n");
-      out.write("            <tr>\n");
-      out.write("                <th align=\"right\">自己紹介:</th>\n");
-      out.write("                <td>");
-      out.print( udb.getComment());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("        </table>\n");
+      out.write("        エラーが発生しました。以下の項目を確認してください。<br>\n");
+      out.write("        ");
+if(request.getAttribute("error") != null){
+      out.write("\n");
+      out.write("        ");
+      out.print(request.getAttribute("error"));
+      out.write("<br>\n");
+      out.write("        ");
+}else{
+      out.write("\n");
+      out.write("        ");
+      out.print("このページへの直接のアクセスです");
+      out.write("\n");
+      out.write("        ");
+}
+      out.write("\n");
       out.write("        ");
       out.write("\n");
       out.write("        ");
       out.print(JumsHelper.getInstance().home());
       out.write("\n");
-      out.write("        </center>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write('\n');
- hs.invalidate();
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

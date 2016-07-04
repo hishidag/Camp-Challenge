@@ -6,7 +6,7 @@ import javax.servlet.jsp.*;
 import javax.servlet.http.HttpSession;
 import jums.JumsHelper;
 import jums.UserDataBeans;
-import jums.checkCharacter;
+import jums.CheckCharacter;
 
 public final class insertconfirm_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -51,12 +51,13 @@ public final class insertconfirm_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
 
     HttpSession hs = request.getSession();
+    //課題７
     hs.setMaxInactiveInterval(60 * 3);
     UserDataBeans udb = new UserDataBeans();
     if(hs.getAttribute("FormContents") != null){
         udb = (UserDataBeans)hs.getAttribute("FormContents");
     }
-    checkCharacter cc = new checkCharacter();
+    CheckCharacter cc = new CheckCharacter();
 
       out.write("\n");
       out.write("\n");
@@ -67,38 +68,71 @@ public final class insertconfirm_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        <title>JUMS登録確認画面</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("        <center>\n");
       out.write("        <h1>登録確認</h1>\n");
       out.write("        <table>\n");
-      out.write("        <tr><th align=\"right\">名前:</th><td>");
+      out.write("            <tr>\n");
+      out.write("                <th align=\"right\">名前:</th>\n");
+      out.write("                <td width=\"280px\">");
       out.print( udb.getName());
-      out.write("</td><td>");
+      out.write("</td>\n");
+      out.write("                <td width=\"170px\">");
       out.print( cc.checkCharacter(udb.getName()));
-      out.write("</td></tr>\n");
-      out.write("        <tr><th align=\"right\">生年月日:</th><td>");
+      out.write("</td>\n");
+      out.write("            </tr>\n");
+      out.write("            <tr>\n");
+      out.write("                <th align=\"right\">生年月日:</th>\n");
+      out.write("                <td>");
       out.print( udb.getYear() +"年"+udb.getMonth()+"月"+ udb.getDay() +"日");
       out.write("</td>\n");
-      out.write("        <td>");
+      out.write("                <td>");
       out.print( "年:" + cc.checkNumber(udb.getYear()));
       out.write("<br>\n");
-      out.write("        ");
+      out.write("                    ");
       out.print( "月:" + cc.checkNumber(udb.getMonth()));
       out.write("<br>\n");
-      out.write("        ");
+      out.write("                    ");
       out.print( "日:" + cc.checkNumber(udb.getDay()));
-      out.write("</td></tr>\n");
-      out.write("        <tr><th align=\"right\">種別:</th><td>");
-      out.print( udb.getType());
-      out.write("</td><td>");
+      out.write("</td>\n");
+      out.write("            </tr>\n");
+      out.write("            <tr>\n");
+      out.write("                <th align=\"right\">種別:</th>\n");
+      out.write("                <td>");
+if("1".equals(udb.getType())){
+      out.write("エンジニア");
+}
+      out.write("\n");
+      out.write("                    ");
+if("2".equals(udb.getType())){
+      out.write('営');
+      out.write('業');
+}
+      out.write("\n");
+      out.write("                    ");
+if("3".equals(udb.getType())){
+      out.write("その他");
+}
+      out.write("</td>\n");
+      out.write("                <td>");
       out.print( cc.checkNumber(udb.getType()));
-      out.write("</td></tr>\n");
-      out.write("        <tr><th align=\"right\">電話番号:</th><td>");
+      out.write("</td>\n");
+      out.write("            </tr>\n");
+      out.write("            <tr>\n");
+      out.write("                <th align=\"right\">電話番号:</th>\n");
+      out.write("                <td>");
       out.print( udb.getTell());
-      out.write("</td><td>");
+      out.write("</td>\n");
+      out.write("                <td>");
       out.print( cc.checkTell(udb.getTell()));
-      out.write("</td></tr>\n");
-      out.write("        <tr><th align=\"right\">自己紹介:</th><td width=\"300px\">");
+      out.write("</td>\n");
+      out.write("            </tr>\n");
+      out.write("            <tr>\n");
+      out.write("                <th align=\"right\">自己紹介:</th>\n");
+      out.write("                <td>");
       out.print( udb.getComment());
-      out.write("</td><td></td></tr>\n");
+      out.write("</td>\n");
+      out.write("                <td></td>\n");
+      out.write("            </tr>\n");
       out.write("        </table>\n");
       out.write("        ");
 if(cc.isAllCheck){
@@ -118,8 +152,11 @@ if(cc.isAllCheck){
       out.write("        </form>\n");
       out.write("    <br>\n");
       out.write("    ");
+      out.write("\n");
+      out.write("    ");
       out.print(JumsHelper.getInstance().home());
       out.write("\n");
+      out.write("    </center>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

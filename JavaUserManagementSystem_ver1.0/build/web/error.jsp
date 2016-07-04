@@ -7,9 +7,11 @@
         <title>error</title>
     </head>
     <body>
+        <center>
         エラーが発生しました。以下の項目を確認してください。<br>
-        <%=request.getAttribute("error")%>
+        <%=request.getAttribute("error")%><br>
         <%--課題１--%>
         <%=JumsHelper.getInstance().home()%>
+        </center>
     </body>
 </html>

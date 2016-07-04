@@ -52,6 +52,7 @@ public class InsertResult extends HttpServlet {
             int birthdayMonth = Integer.parseInt(udb.getMonth()) - 1;
             int birthdayDay = Integer.parseInt(udb.getDay());            
             birthday.set(birthdayYear,birthdayMonth,birthdayDay,0,0,0);
+            birthday.set(Calendar.MILLISECOND, 0);
             userdata.setBirthday(birthday.getTime());
             
             userdata.setType(Integer.parseInt(udb.getType()));

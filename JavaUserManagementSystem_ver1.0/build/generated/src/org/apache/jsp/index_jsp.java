@@ -49,11 +49,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title>JUMSトップ</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write("    <h1>ユーザー情報管理トップ</h1><br>\n");
-      out.write("    <h3>ここでは、ユーザー情報管理システムとしてユーザー情報の登録や検索、\n");
-      out.write("        付随して修正や削除を行うことができます</h3><br>\n");
-      out.write("    <a href=\"insert\">新規登録</a><br>\n");
-      out.write("    <a href=\"\" >検索(修正・削除)</a><br>\n");
+      out.write("    <center>\n");
+      out.write("    <h1>ユーザー情報管理</h1><br>\n");
+      out.write("    <h3>ユーザー情報の登録や検索、付随して修正や削除を行うことができます</h3><br>\n");
+      out.write("    <a href=\"insert\">新規登録</a>/<a href=\"\" >検索(修正・削除)</a><br>\n");
+      out.write("    </center>\n");
       out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
