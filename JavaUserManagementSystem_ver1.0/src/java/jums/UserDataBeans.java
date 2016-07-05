@@ -20,7 +20,7 @@ public class UserDataBeans implements Serializable {
     String tell     = ""; 
     String comment  = "";   
     
-    public void UserDateBeans(){}
+    public UserDataBeans(){}
     //XSSを回避するための文字列変換
     public String escapeSpecialCharaters(String str){
         if(str == null) {return "";}
