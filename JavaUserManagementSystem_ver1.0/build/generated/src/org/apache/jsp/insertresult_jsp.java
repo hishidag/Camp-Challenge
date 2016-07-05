@@ -82,7 +82,20 @@ public final class insertresult_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("            <tr>\n");
       out.write("                <th align=\"right\">種別:</th>\n");
       out.write("                <td>");
-      out.print( udb.getType());
+if("1".equals(udb.getType())){
+      out.write("エンジニア");
+}
+      out.write("\n");
+      out.write("                    ");
+if("2".equals(udb.getType())){
+      out.write('営');
+      out.write('業');
+}
+      out.write("\n");
+      out.write("                    ");
+if("3".equals(udb.getType())){
+      out.write("その他");
+}
       out.write("</td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>\n");
