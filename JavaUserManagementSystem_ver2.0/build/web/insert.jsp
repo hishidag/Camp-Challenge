@@ -6,7 +6,7 @@
     HttpSession hs = request.getSession();
     UserDataBeans udb = new UserDataBeans();
     boolean reinput = false;
-    if(request.getParameter("mode") != null && request.getParameter("mode").equals("REINPUT") && hs.getAttribute("udb") != null){
+    if(request.getParameter("mode") != null && request.getParameter("mode").equals("REINPUT")){
         reinput = true;
         udb = (UserDataBeans)hs.getAttribute("udb");
     }

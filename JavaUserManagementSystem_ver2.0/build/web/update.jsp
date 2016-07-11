@@ -6,6 +6,7 @@
     JumsHelper jh = JumsHelper.getInstance();
     HttpSession hs = request.getSession();
     UserDataDTO udd = new UserDataDTO();
+    //訂正したデータを表示するための処理
     if(request.getParameter("mode") != null && request.getParameter("mode").equals("REINPUT")){
         UserDataBeans udb = (UserDataBeans)hs.getAttribute("udb");
         udb.UD2DTOMapping(udd);
